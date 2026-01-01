@@ -1,26 +1,67 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body{
+background-color: #F7E6AF ;
+}
+/* Your animation CSS */
+.box-pop {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: popIn 0.8s ease-out forwards;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+.center-expand {
+  opacity: 0;
+  transform: scale(0.3);
+  animation: expand 1s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Global scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF4D3; /* slider track = beige */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #31572C; /* slider handle = green (same as cards) */
+  border-radius: 6px;
+  border: 3px solid #FAF4D3; /* optional padding around thumb */
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #31572C #FAF4D3;
 }
