@@ -41,7 +41,7 @@ export default function AboutPage() {
     <main className="min-h-screen  bg-[radial-gradient(ellipse_at_top,_#0808A1_0%,_#09056C_30%,_#0A0000_84%)] text-white flex items-center justify-center p-4 sm:p-8 overflow-hidden pt-24">
       
       <div
-        className={`transition-all duration-[1500ms] mt-12 ease-out transform ${
+        className={`transition-all duration-[1500ms] mt-12 mb-17 ease-out transform ${
           showCard ?  "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         } w-full max-w-5xl bg-white/10 backdrop-blur-lg rounded-[2rem] p-8 sm:p-12 shadow-2xl border border-white/10`}
       >
